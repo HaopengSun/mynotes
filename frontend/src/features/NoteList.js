@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import Note from '../components/Note'
 
 const NoteList = () => {
   let [notes, setNotes] = useState([]);
 
   let getNotes = async () => {
-    let response = await fetch('http://127.0.0.1:8000/notes');
+    let response = await fetch('/notes');
     let data = await response.json();
     setNotes(data);
   }
@@ -16,7 +17,7 @@ const NoteList = () => {
   return (
     <div>
       <div className="noteList">
-        {notes.map((note, index) => <h5 key={index}>{note.body}</h5>)}
+        {notes.map((note, index) => <Note key={index} note={note} />)}
       </div>
     </div>
   )

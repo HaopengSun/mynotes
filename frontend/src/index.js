@@ -1,10 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import App from "./App";
+import Note from "./features/Note";
+import ReactDOM from 'react-dom/client'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+rootElement.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" exact element={<App />} />
+      <Route path="/note/:id" element={<Note />} />
+    </Routes>
+  </BrowserRouter>
 );
