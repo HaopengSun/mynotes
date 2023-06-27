@@ -18,7 +18,6 @@ const Note = () => {
 
   return (
     <div>
-      <Header />
       <h3>{note.body}</h3>
     </div>
   )

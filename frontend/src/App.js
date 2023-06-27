@@ -5,7 +5,6 @@ import NoteList from './features/NoteList.js'
 function App() {
   return (
     <div className="App">
-      <Header />
       <NoteList />
     </div>
   );
